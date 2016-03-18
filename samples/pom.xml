@@ -10,7 +10,9 @@
 	</parent>
 
 	<artifactId>testfx-playground-reactor</artifactId>
+	<packaging>pom</packaging>
 	<name>Samples Java FX TestFX Playground</name>
+	
 	 
 
 	<description>

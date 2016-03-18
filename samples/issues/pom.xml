@@ -5,16 +5,16 @@
 
 	<parent>
 		<groupId>de.dbo.samples.javafx</groupId>
-		<artifactId>javafx</artifactId>
+		<artifactId>testfx-playground-reactor</artifactId>
 		<version>0.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>spring0</artifactId>
+	<artifactId>issues</artifactId>
 	<name>Samples Java FX Spring</name>
 	<url>https://dzone.com/articles/use-javafx2-spring</url>
 
 	<description>
-Samples Java FX Spring 0
+
 	</description>
 
 	<dependencies>

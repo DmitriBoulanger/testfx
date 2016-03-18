@@ -5,11 +5,11 @@
 
 	<parent>
 		<groupId>de.dbo.samples.javafx</groupId>
-		<artifactId>javafx</artifactId>
+		<artifactId>testfx-playground-reactor</artifactId>
 		<version>0.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>spring0</artifactId>
+	<artifactId>spring-controllers</artifactId>
 	<name>Samples Java FX Spring</name>
 	<url>https://dzone.com/articles/use-javafx2-spring</url>
 
@@ -28,11 +28,19 @@ Samples Java FX Spring 0
 			<artifactId>spring-context</artifactId>
 		</dependency>
 		
-<!-- 		<dependency> -->
-<!--     		<groupId>org.loadui</groupId> -->
-<!--     		<artifactId>testFx</artifactId> -->
-<!--     		<version>3.1.2</version> -->
-<!-- 		</dependency> -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter</artifactId>
+	<version>1.3.3.RELEASE</version>
+</dependency>
+		
+<dependency>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<artifactId>jackson-databind</artifactId>
+	<version>2.7.3</version>
+</dependency>
+
+
 
 	<dependency>
 		<groupId>org.testfx</groupId>
@@ -47,14 +55,7 @@ Samples Java FX Spring 0
 		<scope>test</scope>
 	</dependency>
 		
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
+
 	</dependencies>
 
 </project>
