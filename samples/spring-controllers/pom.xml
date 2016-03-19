@@ -4,29 +4,21 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.dbo.samples.javafx</groupId>
+		<groupId>de.dbo.samples.javafx-testfx</groupId>
 		<artifactId>testfx-playground-reactor</artifactId>
 		<version>0.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>spring-controllers</artifactId>
-	<name>Samples Java FX Spring</name>
-	<url>https://dzone.com/articles/use-javafx2-spring</url>
+	<name>Samples Test FX Playground - Spring Boot App</name>
+	<url></url>
 
 	<description>
 Samples Java FX Spring 0
 	</description>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-		</dependency>
+
 		
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -40,14 +32,13 @@ Samples Java FX Spring 0
 	<version>2.7.3</version>
 </dependency>
 
-
-
 	<dependency>
 		<groupId>org.testfx</groupId>
 		<artifactId>testfx-core</artifactId>
 		<version>4.0.1-alpha</version>
 		<scope>test</scope>
 	</dependency>
+	
 	<dependency>
 		<groupId>org.testfx</groupId>
 		<artifactId>testfx-junit</artifactId>
@@ -55,7 +46,6 @@ Samples Java FX Spring 0
 		<scope>test</scope>
 	</dependency>
 		
-
 	</dependencies>
 
 </project>

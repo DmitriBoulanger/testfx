@@ -4,18 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.dbo.samples.javafx</groupId>
-		<artifactId>javafx</artifactId>
+		<groupId>de.dbo.samples.javafx-testfx</groupId>
+	    <artifactId>javafx-testfx</artifactId>
 		<version>0.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>testfx-playground-reactor</artifactId>
 	<packaging>pom</packaging>
-	<name>Samples Java FX TestFX Playground</name>
+	<name>Samples Test FX Playground</name>
 	<url></url>
 	
-	 
-
 	<description>
  
 	</description>
@@ -24,11 +22,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
 		</dependency>
 
 	<dependency>
