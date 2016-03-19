@@ -11,10 +11,7 @@
 
 	<artifactId>spring-controllers</artifactId>
 	<name>Samples Test FX Playground - Spring Boot App</name>
-	<url></url>
-
 	<description>
-Samples Java FX Spring 0
 	</description>
 
 	<dependencies>
@@ -35,14 +32,12 @@ Samples Java FX Spring 0
 	<dependency>
 		<groupId>org.testfx</groupId>
 		<artifactId>testfx-core</artifactId>
-		<version>4.0.1-alpha</version>
 		<scope>test</scope>
 	</dependency>
 	
 	<dependency>
 		<groupId>org.testfx</groupId>
 		<artifactId>testfx-junit</artifactId>
-		<version>4.0.1-alpha</version>
 		<scope>test</scope>
 	</dependency>
 		
