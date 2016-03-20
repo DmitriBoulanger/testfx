@@ -28,8 +28,8 @@ public class ClientApplication extends Application {
 	}
 
 	@Override
-	public void init() throws Exception {
-		ConfigurableApplicationContext context = startSpringApplication();
+	public final void init() throws Exception {
+		final ConfigurableApplicationContext context = startSpringApplication();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
 		loader.setControllerFactory(clazz -> context.getBean(clazz));
 		root = loader.load();
@@ -45,9 +45,9 @@ public class ClientApplication extends Application {
 	}
 
 	private ConfigurableApplicationContext startSpringApplication() {
-		SpringApplication application = new SpringApplication(ClientApplication.class);
-		String[] args = getParameters().getRaw().stream().toArray(String[]::new);
-		application.setHeadless(false);
+		final SpringApplication application = new SpringApplication(ClientApplication.class);
+		final String[] args = getParameters().getRaw().stream().toArray(String[]::new);
+		application.setHeadless(true);
 		return application.run(args);
 	}
 
