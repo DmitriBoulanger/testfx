@@ -15,8 +15,6 @@ import org.testfx.playground.view.FilteredTable;
 @Component
 public class StatisticsController implements FxmlController {
 
-	private final MainController mainController;
-	private final Model model;
 
 	@FXML private TableView<Team> teamTable;
 	@FXML private TableColumn<Team, String> teamNameColumn;
@@ -27,6 +25,9 @@ public class StatisticsController implements FxmlController {
 	@FXML private TableColumn<Player, String> playerNameColumn;
 	@FXML private TableColumn<Player, String> playerPositionsColumn;
 	@FXML private TableColumn<Player, Number> playerFieldGoalPercentageColumn;
+	
+	private final MainController mainController;
+	private final Model model;
 
 	@Autowired
 	public StatisticsController(Model model, MainController mainController) {
@@ -40,6 +41,9 @@ public class StatisticsController implements FxmlController {
 		setupPlayerTable();
 	}
 
+	
+	
+	
 	private void setupTeamTable() {
 		teamNameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 

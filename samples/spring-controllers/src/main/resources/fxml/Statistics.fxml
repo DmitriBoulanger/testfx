@@ -6,7 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import org.testfx.playground.view.*?>
 
-<SplitPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.testfx.playground.controller.StatisticsController"
+<SplitPane xmlns:fx="http://javafx.com/fxml" 
+    fx:controller="org.testfx.playground.controller.StatisticsController"
 	dividerPositions="0.25">
 
 	<items>

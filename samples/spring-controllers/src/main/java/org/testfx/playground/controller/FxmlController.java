@@ -13,13 +13,13 @@ import javafx.fxml.Initializable;
  */
 public interface FxmlController {
 
-	/**
-	 * Called by the {@link FXMLLoader} to initialize a controller after its
-	 * root element has been completely processed. This means all of the
-	 * controller's {@link FXML} elements will be injected, and they can be used
-	 * to wire up the GUI in ways that couldn't be accomplished using pure FXML,
-	 * e.g. attaching property listeners.
-	 */
-	void initialize();
+    /**
+     * Called by the {@link FXMLLoader} to initialize a controller after its
+     * root element has been completely processed. This means all of the
+     * controller's {@link FXML} elements will be injected, and they can be used
+     * to wire up the GUI in ways that couldn't be accomplished using pure FXML,
+     * e.g. attaching property listeners.
+     */
+    void initialize();
 
 }

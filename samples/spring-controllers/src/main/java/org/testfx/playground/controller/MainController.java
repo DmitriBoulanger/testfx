@@ -12,11 +12,11 @@ import org.testfx.playground.model.Model;
 @Component
 public class MainController implements FxmlController {
 
-	private final Model model;
-
 	@FXML private MenuItem morePlayersMenuItem;
 	@FXML private MenuItem moreTeamsMenuItem;
 	@FXML private CheckMenuItem showFieldGoalPercentage;
+	
+	private final Model model;
 
 	@Autowired
 	public MainController(Model model) {
