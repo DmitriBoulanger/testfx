@@ -30,15 +30,16 @@ public class ClientApplicationTestTwo extends ClientApplicationTestAbstraction {
 				fieldGoalPercentageColumn = column;
 			}
 		}
-
 		if (fieldGoalPercentageColumn == null) {
 			Assert.fail("Could not find the FG % column");
 		}
-
+		
 		Assert.assertTrue(fieldGoalPercentageColumn.isVisible());
-		clickOn("View").clickOn("Show FG %");
+		
+		clickOn("View").sleep(100).clickOn("Show FG %");
 		Assert.assertFalse(fieldGoalPercentageColumn.isVisible());
-		clickOn("View").clickOn("Show FG %");
+		
+		clickOn("View").sleep(100).clickOn("Show FG %");
 		Assert.assertTrue(fieldGoalPercentageColumn.isVisible());
 	}
 
