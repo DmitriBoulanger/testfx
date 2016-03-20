@@ -8,7 +8,7 @@ import org.junit.BeforeClass;
 import org.testfx.framework.junit.ApplicationTest;
 import org.testfx.playground.model.Player;
 
-public abstract class ClientApplicationTestBase extends ApplicationTest {
+public abstract class ClientApplicationTestAbstraction extends ApplicationTest {
 
 	protected TableView<Player> playerTable;
 

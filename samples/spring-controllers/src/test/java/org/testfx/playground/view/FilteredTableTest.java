@@ -20,16 +20,6 @@ import org.testfx.playground.view.FilteredTable;
 
 public class FilteredTableTest extends ApplicationTest {
 
-	private static class Item {
-		public final StringProperty name;
-		public Item(String name) {
-			this.name = new SimpleStringProperty(name);
-		}
-		public String getName() {
-			return name.get();
-		}
-	}
-
 	@Override
 	public void start(Stage stage) throws Exception {
 

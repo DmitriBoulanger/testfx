@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.testfx.api.FxRobotException;
 
-public class ClientApplicationTestOne extends ClientApplicationTestBase {
+public class ClientApplicationTestOne extends ClientApplicationTestAbstraction {
 
 	@Test(expected = FxRobotException.class)
 	public void clickNonexistentElement() {

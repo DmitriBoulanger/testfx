@@ -47,7 +47,7 @@ public class ClientApplication extends Application {
 	private ConfigurableApplicationContext startSpringApplication() {
 		final SpringApplication application = new SpringApplication(ClientApplication.class);
 		final String[] args = getParameters().getRaw().stream().toArray(String[]::new);
-		application.setHeadless(true);
+		application.setHeadless(false);
 		return application.run(args);
 	}
 

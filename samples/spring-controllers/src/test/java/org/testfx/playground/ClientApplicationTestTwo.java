@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.testfx.playground.model.Player;
 
-public class ClientApplicationTestTwo extends ClientApplicationTestBase {
+public class ClientApplicationTestTwo extends ClientApplicationTestAbstraction {
 
 	@Test
 	public void importTeamsAndPlayers() {
