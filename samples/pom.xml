@@ -17,15 +17,18 @@
 	<description>
 	</description>
 
- 
+    <!-- Official -->
 	<properties>
-		<testfx.version>4.0.2-alpha</testfx.version>
+		<testfx.version>${org.testfx.version}</testfx.version>
 		<testfx.group>org.testfx</testfx.group>
 	</properties>
+	
+	<!-- Local clone -->
 <!-- 	<properties> -->
 <!-- 		<testfx.version>${project.version}</testfx.version> -->
 <!-- 		<testfx.group>de.dbo.samples.testfx</testfx.group> -->
 <!-- 	</properties> -->
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
