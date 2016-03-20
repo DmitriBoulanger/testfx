@@ -7,36 +7,55 @@
 		<groupId>de.dbo.samples.testfx</groupId>
 	    <artifactId>testfx</artifactId>
 		<version>0.0.0-SNAPSHOT</version>
+		<relativePath/>
 	</parent>
 
-	<artifactId>testfx-playground-reactor</artifactId>
+	<artifactId>testfx-playground</artifactId>
 	<packaging>pom</packaging>
 	<name>Samples Test FX Playground</name>
 	<url></url>
-	
 	<description>
- 
 	</description>
 
+<!--  
+	<properties>
+		<testfx.version>${project.version}</testfx.version>
+		<testfx.group>de.dbo.samples.testfx</testfx.group>
+	</properties>
+-->
+	<properties>
+		<testfx.version>4.0.2-alpha</testfx.version>
+		<testfx.group>org.testfx</testfx.group>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${testfx.group}</groupId>
+				<artifactId>testfx-core</artifactId>
+				<version>${testfx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${testfx.group}</groupId>
+				<artifactId>testfx-junit</artifactId>
+				<version>${testfx.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
+
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
+			<groupId>${testfx.group}</groupId>
+			<artifactId>testfx-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>${testfx.group}</groupId>
+			<artifactId>testfx-junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 
-	<dependency>
-		<groupId>org.testfx</groupId>
-		<artifactId>testfx-core</artifactId>
-		<version>4.0.1-alpha</version>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.testfx</groupId>
-		<artifactId>testfx-junit</artifactId>
-		<version>4.0.1-alpha</version>
-		<scope>test</scope>
-	</dependency>
-		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

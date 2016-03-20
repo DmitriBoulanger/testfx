@@ -9,16 +9,12 @@
 		<version>0.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>basics</artifactId>
+	<artifactId>testfx-playground-basics</artifactId>
 	<name>Samples Test FX Playground - Basics</name>
  
-
 	<description>
  
 	</description>
-
-	<dependencies>
-		
-	</dependencies>
+ 
 
 </project>
