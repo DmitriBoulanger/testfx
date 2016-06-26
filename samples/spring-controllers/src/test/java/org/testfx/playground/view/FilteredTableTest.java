@@ -49,8 +49,8 @@ public class FilteredTableTest extends ApplicationTest {
 	@Test
 	public void testFilter() {
 
-		TableView<Item> tableView = lookup(".table-view").queryFirst();
-		TextField textField = lookup(".text-field").queryFirst();
+		TableView<Item> tableView = lookup(".table-view").query();
+		TextField textField = lookup(".text-field").query();
 
 		clickOn(textField);
 
