@@ -62,7 +62,7 @@ public class mailinglist_stage_focus_textfield extends FxRobot {
         verifyThat(from("2nd stage").lookup("#barText"), isFocused());
     }
 
-    private Window window(String stageTitleRegex) {
+    public Window window(String stageTitleRegex) {
         return robotContext().getWindowFinder().window(stageTitleRegex);
     }
 

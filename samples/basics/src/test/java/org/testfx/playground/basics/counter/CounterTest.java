@@ -1,7 +1,7 @@
 package org.testfx.playground.basics.counter;
 
 import static org.testfx.api.FxAssert.verifyThat;
-import static org.testfx.service.query.impl.NodeQueryUtils.hasText;
+import static org.testfx.matcher.control.TextMatchers.hasText;
 
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
