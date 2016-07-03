@@ -1,52 +1,57 @@
 package org.testfx.playground;
 
-import javafx.scene.control.TableColumn;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
-import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.testfx.playground.model.Player;
 
+import javafx.scene.control.TableColumn;
+
+@SuppressWarnings("restriction")
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClientApplicationTestTwo extends ClientApplicationTestAbstraction {
 
-	@Test
-	public void importTeamsAndPlayers() {
-	    
-	    	clickOn("Team");
-	    	clickOn("Name");
-	    	clickOn("Positions");
-	    	clickOn("No.");
-	    	
-		clickOn("File").moveTo("Import").clickOn("More Teams");
-		clickOn("Miami Heat");
+    @Test
+    public void test_000_ImportTeamsAndPlayers() {
 
-		Assert.assertEquals(0, playerTable.getItems().size());
 
-		clickOn("File").moveTo("Import").clickOn("More Players");
-		clickOn("Chris Bosh");
+	clickOn("File").moveTo("Import").clickOn("More Teams");
+	clickOn("Miami Heat");
 
-		Assert.assertEquals("Chris Bosh", playerTable.getSelectionModel().getSelectedItem().getName());
+	assertThat(playerTable.getItems(), hasSize(0));
+
+	clickOn("File").moveTo("Import").clickOn("More Players");
+	clickOn("Chris Bosh");
+
+	assertThat("Chris Bosh", equalTo(playerTable.getSelectionModel().getSelectedItem().getName()));
+    }
+
+    @Test
+    public void test_100_ToggleFieldGoalPercentage() {
+	// TODO: lookup the TableColumn directly (by id)?
+	TableColumn<Player, ?> fieldGoalPercentageColumn = null;
+	for (TableColumn<Player, ?> column : playerTable.getColumns()) {
+	    if (column.getText().equals("FG %")) {
+		fieldGoalPercentageColumn = column;
+	    }
 	}
+	
+	assertThat(fieldGoalPercentageColumn, notNullValue());
+	
+	assertThat(fieldGoalPercentageColumn.isVisible(), is(true));
 
-	@Test
-	public void toggleFieldGoalPercentage() {
-		// TODO: lookup the TableColumn directly (by id)?
-		TableColumn<Player, ?> fieldGoalPercentageColumn = null;
-		for (TableColumn<Player, ?> column : playerTable.getColumns()) {
-			if (column.getText().equals("FG %")) {
-				fieldGoalPercentageColumn = column;
-			}
-		}
-		if (fieldGoalPercentageColumn == null) {
-			Assert.fail("Could not find the FG % column");
-		}
-		
-		Assert.assertTrue(fieldGoalPercentageColumn.isVisible());
-		
-		clickOn("View").sleep(100).clickOn("Show FG %");
-		Assert.assertFalse(fieldGoalPercentageColumn.isVisible());
-		
-		clickOn("View").sleep(100).clickOn("Show FG %");
-		Assert.assertTrue(fieldGoalPercentageColumn.isVisible());
-	}
+	clickOn("View").sleep(100).clickOn("Show FG %");
+	assertThat(fieldGoalPercentageColumn.isVisible(), is(false));
+
+	clickOn("View").sleep(100).clickOn("Show FG %");
+	assertThat(fieldGoalPercentageColumn.isVisible(), is(true));
+
+    }
 
 }

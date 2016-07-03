@@ -1,6 +1,7 @@
 package org.testfx.playground;
 
 import javafx.scene.control.TableView;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import javafx.stage.Stage;
 
 import org.junit.Before;

@@ -1,22 +1,28 @@
 package org.testfx.playground;
 
-import org.junit.Assert;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
 import org.testfx.api.FxRobotException;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClientApplicationTestOne extends ClientApplicationTestAbstraction {
 
 	@Test(expected = FxRobotException.class)
-	public void clickNonexistentElement() {
+	public void test_000_clickNonexistentElement() {
 		clickOn("Nonexistent Element");
 	}
 
+	@SuppressWarnings("restriction")
 	@Test
-	public void selectPlayer() {
+	public void test_100_selectPlayer() {
 		clickOn("Cleveland Cavaliers");
 		clickOn("LeBron James");
-
-		Assert.assertEquals("LeBron James", playerTable.getSelectionModel().getSelectedItem().getName());
+		assertThat("LeBron James", equalTo(playerTable.getSelectionModel().getSelectedItem().getName()));
 	}
 
 }

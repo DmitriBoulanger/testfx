@@ -1,7 +1,10 @@
 package org.testfx.playground.view;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import static org.testfx.api.FxAssert.verifyThat;
+
+import org.junit.Test;
+import org.testfx.framework.junit.ApplicationTest;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
@@ -13,60 +16,55 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
-import org.junit.Test;
-import org.testfx.api.FxAssert;
-import org.testfx.framework.junit.ApplicationTest;
-import org.testfx.playground.view.FilteredTable;
-
+@SuppressWarnings("restriction")
 public class FilteredTableTest extends ApplicationTest {
 
-	@Override
-	public void start(Stage stage) throws Exception {
+    @Override
+    public void start(Stage stage) throws Exception {
 
-		TableView<Item> tableView = new TableView<>();
-		TableColumn<Item, String> tableColumn = new TableColumn<>("Name");
-		tableColumn.setCellValueFactory(cellData -> cellData.getValue().name);
-		tableView.getColumns().add(tableColumn);
-		tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+	TableView<Item> tableView = new TableView<>();
+	TableColumn<Item, String> tableColumn = new TableColumn<>("Name");
+	tableColumn.setCellValueFactory(cellData -> cellData.getValue().name);
+	tableView.getColumns().add(tableColumn);
+	tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-		FilteredTable<Item> filterableTable = new FilteredTable<>(tableView, new TextField());
-		filterableTable.setItems(toItems("foo", "bar", "baz", "Testing", "Testing, testing, 1, 2, 3"));
-		filterableTable.setFilterFunction((team, filterText) -> team.getName().contains(filterText));
+	FilteredTable<Item> filterableTable = new FilteredTable<>(tableView, new TextField());
+	filterableTable.setItems(toItems("foo", "bar", "baz", "Testing", "Testing, testing, 1, 2, 3"));
+	filterableTable.setFilterFunction((team, filterText) -> team.getName().contains(filterText));
 
-		stage.setScene(new Scene(filterableTable, 600, 400));
-		stage.show();
+	stage.setScene(new Scene(filterableTable, 600, 400));
+	stage.show();
+    }
 
+    public ObservableList<Item> toItems(String... names) {
+	ObservableList<Item> items = FXCollections.observableArrayList();
+	for (String name : names) {
+	    items.add(new Item(name));
 	}
+	return items;
+    }
 
-	public ObservableList<Item> toItems(String... names) {
-		ObservableList<Item> items = FXCollections.observableArrayList();
-		for (String name : names) {
-			items.add(new Item(name));
-		}
-		return items;
-	}
+    @Test
+    public void testFilter() {
 
-	@Test
-	public void testFilter() {
+	final TableView<Item> tableView = lookup(".table-view").query();
+	final TextField textField = lookup(".text-field").query();
 
-		TableView<Item> tableView = lookup(".table-view").query();
-		TextField textField = lookup(".text-field").query();
+	clickOn(textField);
 
-		clickOn(textField);
+	// add filter
+	write("Testing");
+	verifyThat(tableView, node -> node.getItems().size() == 2);
 
-		// add filter
-		write("Testing");
-		FxAssert.verifyThat(tableView, node -> node.getItems().size() == 2);
+	// remove filter
+	push(new KeyCodeCombination(KeyCode.A, KeyCombination.CONTROL_DOWN));
+	push(KeyCode.BACK_SPACE);
+	verifyThat(tableView, node -> node.getItems().size() == 5);
 
-		// remove filter
-		push(new KeyCodeCombination(KeyCode.A, KeyCombination.CONTROL_DOWN));
-		push(KeyCode.BACK_SPACE);
-		FxAssert.verifyThat(tableView, node -> node.getItems().size() == 5);
+	// add filter
+	write("1, 2, 3");
+	verifyThat(tableView, node -> node.getItems().size() == 1);
 
-		// add filter
-		write("1, 2, 3");
-		FxAssert.verifyThat(tableView, node -> node.getItems().size() == 1);
-
-	}
+    }
 
 }
