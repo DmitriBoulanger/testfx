@@ -20,7 +20,6 @@ public class ClientApplicationTestTwo extends ClientApplicationTestAbstraction {
     @Test
     public void test_000_ImportTeamsAndPlayers() {
 
-
 	clickOn("File").moveTo("Import").clickOn("More Teams");
 	clickOn("Miami Heat");
 
