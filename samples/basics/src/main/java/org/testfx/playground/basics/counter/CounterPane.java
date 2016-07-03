@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 
+@SuppressWarnings("restriction")
 public class CounterPane extends StackPane {
     
     private static int asInteger(String value) { 
