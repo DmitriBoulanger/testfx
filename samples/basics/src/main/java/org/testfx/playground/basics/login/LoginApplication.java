@@ -12,20 +12,26 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+@SuppressWarnings("restriction")
 public class LoginApplication extends Application {
 
     public static void main(String[] args) {
         launch(LoginApplication.class, args);
     }
 
+   
+    
     @FXML
     TextField usernameField;
     @FXML
+    
     PasswordField passwordField;
     @FXML
     Label messageLabel;
+    
     @FXML
     Button loginButton;
+    
     @FXML
     Button logoutButton;
 

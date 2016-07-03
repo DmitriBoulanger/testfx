@@ -22,13 +22,13 @@ public class FilteredTableTest extends ApplicationTest {
     @Override
     public void start(Stage stage) throws Exception {
 
-	TableView<Item> tableView = new TableView<>();
+	final TableView<Item> tableView = new TableView<>();
 	TableColumn<Item, String> tableColumn = new TableColumn<>("Name");
 	tableColumn.setCellValueFactory(cellData -> cellData.getValue().name);
 	tableView.getColumns().add(tableColumn);
 	tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-	FilteredTable<Item> filterableTable = new FilteredTable<>(tableView, new TextField());
+	final FilteredTable<Item> filterableTable = new FilteredTable<>(tableView, new TextField());
 	filterableTable.setItems(toItems("foo", "bar", "baz", "Testing", "Testing, testing, 1, 2, 3"));
 	filterableTable.setFilterFunction((team, filterText) -> team.getName().contains(filterText));
 
@@ -37,7 +37,7 @@ public class FilteredTableTest extends ApplicationTest {
     }
 
     public ObservableList<Item> toItems(String... names) {
-	ObservableList<Item> items = FXCollections.observableArrayList();
+	final ObservableList<Item> items = FXCollections.observableArrayList();
 	for (String name : names) {
 	    items.add(new Item(name));
 	}
