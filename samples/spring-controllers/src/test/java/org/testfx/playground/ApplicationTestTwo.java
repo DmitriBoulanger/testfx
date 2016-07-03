@@ -13,12 +13,17 @@ import org.testfx.playground.model.Player;
 
 import javafx.scene.control.TableColumn;
 
-@SuppressWarnings("restriction")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ClientApplicationTestTwo extends ClientApplicationTestAbstraction {
+public class ApplicationTestTwo extends ApplicationTestAbstraction {
+    
+    @Test
+    public void test_000_pause() { 
+	sleep(INITIAL_ÜAUSE);
+    }
+
 
     @Test
-    public void test_000_ImportTeamsAndPlayers() {
+    public void test_100_ImportTeamsAndPlayers() {
 
 	clickOn("File").moveTo("Import").clickOn("More Teams");
 	clickOn("Miami Heat");
@@ -32,7 +37,7 @@ public class ClientApplicationTestTwo extends ClientApplicationTestAbstraction {
     }
 
     @Test
-    public void test_100_ToggleFieldGoalPercentage() {
+    public void test_200_ToggleFieldGoalPercentage() {
 	// TODO: lookup the TableColumn directly (by id)?
 	TableColumn<Player, ?> fieldGoalPercentageColumn = null;
 	for (TableColumn<Player, ?> column : playerTable.getColumns()) {

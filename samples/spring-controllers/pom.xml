@@ -11,8 +11,7 @@
 
 	<artifactId>testfx-playground-spring-controllers</artifactId>
 	<name>Samples Test FX Playground - Spring Boot App</name>
-	<description>
-	</description>
+	<description></description>
 
 	<dependencies>
 

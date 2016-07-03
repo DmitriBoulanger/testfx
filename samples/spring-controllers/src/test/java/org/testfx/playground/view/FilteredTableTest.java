@@ -1,8 +1,11 @@
 package org.testfx.playground.view;
 
 import static org.testfx.api.FxAssert.verifyThat;
+import static org.testfx.playground.ApplicationTestAbstraction.INITIAL_ÜAUSE;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.testfx.framework.junit.ApplicationTest;
 
 import javafx.collections.FXCollections;
@@ -16,7 +19,7 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class FilteredTableTest extends ApplicationTest {
 
     @Override
@@ -43,9 +46,14 @@ public class FilteredTableTest extends ApplicationTest {
 	}
 	return items;
     }
+    
+    @Test
+    public void test_000_pause() { 
+	sleep(INITIAL_ÜAUSE);
+    }
 
     @Test
-    public void testFilter() {
+    public void test_100_Filter() {
 
 	final TableView<Item> tableView = lookup(".table-view").query();
 	final TextField textField = lookup(".text-field").query();

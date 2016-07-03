@@ -1,15 +1,16 @@
 package org.testfx.playground;
 
-import javafx.scene.control.TableView;
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import javafx.stage.Stage;
-
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.testfx.framework.junit.ApplicationTest;
 import org.testfx.playground.model.Player;
 
-public abstract class ClientApplicationTestAbstraction extends ApplicationTest {
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+public abstract class ApplicationTestAbstraction extends ApplicationTest {
+    
+    	public static final long INITIAL_ÜAUSE = 1600;
 
 	protected TableView<Player> playerTable;
 

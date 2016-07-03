@@ -10,7 +10,6 @@ import org.testfx.framework.junit.ApplicationTest;
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.matcher.base.NodeMatchers.hasChildren;
 
-@SuppressWarnings("restriction")
 public class DesktopPaneTest extends ApplicationTest {
     @Override
     public void start(Stage stage) {
